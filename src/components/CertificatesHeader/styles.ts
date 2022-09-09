@@ -11,21 +11,35 @@ const styles = StyleSheet.create({
     },
     
     header: {
-        backgroundColor: '#004354',
+        backgroundColor: '#131313',
         paddingTop: 40,
         paddingLeft: 20,
         paddingRight: 20,
         flexDirection: 'row',
-        alignItems: 'center',
+        alignItems: 'flex-end',
         justifyContent: 'space-between',
         height: 158,
+    },
+
+    goBackButton: {
+        width: '20%',
+    },
+
+    title: {
+        color: 'white',
+        textAlign: 'center',
+        fontSize: 16,
+        fontFamily: 'OpenSans_700Bold',
+        Width: '60%',
     },
     
     iconsContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-end',
+        width: '20%',
     },
+
 });
 
 export default styles;

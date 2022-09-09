@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import TextField from '../../components/TextField';
 import FocusButton from '../../components/FocusButton';
 
-import login from '../../assets/images/login.png';
+import logo from '../../assets/images/logo.png';
 import goBackArrow from '../../assets/images/icons/goBackArrow.png';
 
 import styles from './styles';
@@ -42,7 +42,7 @@ const ForgotPass = () => {
                 behavior="padding"
             >
                 <View style={styles.header}>
-                    <Image style={styles.headerImg} source={login} resizeMode="contain" />
+                    <Image style={styles.headerImg} source={logo} resizeMode="contain" />
                 </View>
                 <View style={styles.body}>
                     <RectButton
@@ -66,7 +66,7 @@ const ForgotPass = () => {
 
                     <FocusButton
                         text="Entrar"
-                        bgColor={email ? '#04D361' : '#DCDCE5'}
+                        bgColor={email ? '#004354' : '#DCDCE5'}
                         textColor={email ? '#FFF' : '#9C98A6'}
                         onPress={() => {}}
                     />

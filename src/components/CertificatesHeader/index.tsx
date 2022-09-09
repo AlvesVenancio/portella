@@ -1,19 +1,19 @@
 import React, { ReactNode } from 'react';
 import { Image, View, Text } from 'react-native';
 import { BorderlessButton } from 'react-native-gesture-handler';
+import {Feather} from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-import logoImg from '../../assets/images/logo.png';
-import homeIcon from '../../assets/images/icons/home.png';
-import profileIcon from '../../assets/images/icons/profile.png';
+import homeIcon from '../../assets/images/icons/home-blue.png';
+import profileIcon from '../../assets/images/icons/profile-blue.png';
 
 import styles from './styles';
 
-interface PageHeaderProps {
+interface CertificatesHeaderProps {
     children?: React.ReactNode;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ children }) => {
+const CertificatesHeader: React.FC<CertificatesHeaderProps> = ({ children }) => {
 
     const navigation = useNavigation();
 
@@ -24,7 +24,10 @@ const PageHeader: React.FC<PageHeaderProps> = ({ children }) => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image source={logoImg} style={styles.logo} resizeMode={'contain'} />
+                <BorderlessButton style={styles.goBackButton} onPress={handleGoAcount}>
+                    <Feather name="chevron-left" size={20} color="#FFFFFF" />                
+                </BorderlessButton>
+                <Text style={styles.title}>Certificados</Text>
                 <View style={styles.iconsContainer}>
                     <BorderlessButton style={{marginRight: 10}}>
                         <Image source={homeIcon} />
@@ -40,4 +43,4 @@ const PageHeader: React.FC<PageHeaderProps> = ({ children }) => {
     );
 }
 
-export default PageHeader;
+export default CertificatesHeader;

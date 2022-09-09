@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 30,
         paddingVertical: 20,
-        backgroundColor: '#8257E5',
+        backgroundColor: '#004354',
     },
     body: {
         flex: 1,

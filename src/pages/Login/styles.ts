@@ -7,13 +7,14 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
     },
     header: {
-        backgroundColor: '#8257E5',
-        height: 280,
+        backgroundColor: '#004354',
+        height: 220,
+        paddingBottom: 50,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
     },
     headerImg: {
-        height: 290,
+        width: 120,
     },
     loginForm: {
         paddingHorizontal: 32,
@@ -29,10 +30,10 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontFamily: 'Roboto_400Regular',
-        color: '#32264D',
+        color: '#002C36',
     },
     createAccountButtonText: {
-        color: '#8257E5',
+        color: '#004354',
         fontSize: 12,
     },
     inputsBlock: {

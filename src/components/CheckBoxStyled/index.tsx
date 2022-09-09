@@ -19,7 +19,7 @@ const CheckBoxStyled: React.FC<CheckBoxStyledProps> = ({ check, text, onPress })
             style={styles.checkboxBlock}
             onPress={onPress}
         >
-                <View style={[styles.checkBox, check && { backgroundColor: '#04D361' }]}>
+                <View style={[styles.checkBox, check && { backgroundColor: '#004354' }]}>
                     {check && <Image source={checked} style={{width: 7}} resizeMode="contain" />}
                 </View>
                 {text && <Text style={styles.checkboxText}>{text}</Text>}

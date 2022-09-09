@@ -28,7 +28,7 @@ const ConfirmScreen: React.FC<ConfirmScreenProps> = (props) => {
             <View style={styles.footer}>
                 <FocusButton
                     text={props.btnTitle}
-                    bgColor="#04D361"
+                    bgColor="#004354"
                     textColor="#FFF"
                     style={styles.button}
                     onPress={props.navigate}

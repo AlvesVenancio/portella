@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         top: 12,
         height: 36,
         width: 2,
-        backgroundColor: '#8257E7',
+        backgroundColor: '#002C36',
         borderRadius: 100,
     },
     seeHidePass: {
@@ -45,7 +45,17 @@ const styles = StyleSheet.create({
         width: 24,
         paddingRight: 55,
         height: 60,
-    }
+    },
+    searchIcon: {
+        position: 'absolute',
+        top: '50%',
+        right: 0,
+        marginTop: -9,
+        width: 18,
+        height: 18,
+        paddingRight: 55,
+        resizeMode: 'contain',
+    },
 });
 
 export default styles;

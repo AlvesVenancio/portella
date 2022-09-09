@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         width: 4,
     },
     activeDotStyle: {
-        backgroundColor: '#8257E5',
+        backgroundColor: '#004354',
         borderRadius: 100,
         height: 4,
         width: 4,
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: 'Roboto_400Regular',
         fontSize: 32,
-        color: '#32264D',
+        color: '#002C36',
     },
     description: {
         fontFamily: 'Roboto_400Regular',
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     formTitle: {
         fontFamily: 'Roboto_400Regular',
         fontSize: 24,
-        color: '#32264D',
+        color: '#002C36',
         marginBottom: 20,
     },
     inputBRadiusTop: {

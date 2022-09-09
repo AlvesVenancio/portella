@@ -101,7 +101,7 @@ const Register = () => {
                                 <FocusButton
                                     style={styles.focusButton}
                                     text="Próximo"
-                                    bgColor={name && lastName ? '#8257E5' : '#DCDCE5'}
+                                    bgColor={name && lastName ? '#004354' : '#DCDCE5'}
                                     textColor={name && lastName ? '#FFF' : '#9C98A6'}
                                     enabled={name && lastName ? true : false}
                                     onPress={() => {
@@ -150,7 +150,7 @@ const Register = () => {
                                 <FocusButton
                                     style={styles.focusButton}
                                     text="Concluir cadastro"
-                                    bgColor={email && pass ? '#04D361' : '#DCDCE5'}
+                                    bgColor={email && pass ? '#004354' : '#DCDCE5'}
                                     textColor={email && pass ? '#FFF' : '#9C98A6'}
                                     enabled={email && pass ? true : false}
                                     onPress={() => { }}

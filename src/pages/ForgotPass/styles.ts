@@ -3,17 +3,17 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
         justifyContent: 'flex-start',
     },
     header: {
-        backgroundColor: '#8257E5',
-        height: 280,
+        backgroundColor: '#004354',
+        height: 220,
+        paddingBottom: 50,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
     },
     headerImg: {
-        height: 290,
+        width: 120,
     },
     body: {
         paddingHorizontal: 32,
@@ -22,14 +22,14 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: 'Roboto_400Regular',
         fontSize: 24,
-        color: '#32264D',
+        color: '#002C36',
         paddingTop: 20,
         paddingBottom: 5,
     },
     description: {
         fontFamily: 'Roboto_400Regular',
         fontSize: 14,
-        color: '#32264D',
+        color: '#002C36',
     },
     input: {
         borderRadius: 10,
