@@ -16,29 +16,6 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
     },
 
-    productLine: {
-        width: '100%',
-        flexDirection: 'row',
-        marginBottom: 10,
-        justifyContent: 'space-between',
-    },
-
-    productBg: {
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        flexDirection: 'row',
-        paddingBottom: 0,
-        height: 60,
-    },
-
-    productImage: {
-        position: 'relative',
-        top: 0,
-    },
-
-    productIcon: {
-        display: 'flex',
-    }
 
 })
 

@@ -47,6 +47,30 @@ const styles = StyleSheet.create({
         display: 'none',
     },
 
+    productLineColumn: {
+        width: '100%',
+        flexDirection: 'row',
+        marginBottom: 10,
+        justifyContent: 'space-between',
+    },
+
+    productBgColumn: {
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        flexDirection: 'row',
+        paddingBottom: 0,
+        height: 60,
+    },
+
+    productImageColumn: {
+        position: 'relative',
+        top: 0,
+    },
+
+    productIconColumn: {
+        display: 'flex',
+    }
+
 });
 
 export default styles;

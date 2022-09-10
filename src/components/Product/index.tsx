@@ -11,23 +11,21 @@ interface ProductProps {
     title: string,
     imageURL: string,
     link: (pointerInside: boolean) => void,
-    style?: {},
-    styleProductBg?: {},
-    styleProductImage?: {},
-    styleProductIcon?: {},
+    column?: Boolean;
 }
 
 const Product: React.FC<ProductProps> = (props) => {
 
+
     return (
-        <View style={[styles.product, props.style]}>
+        <View style={[styles.product, props.column && styles.productLineColumn]}>
             <BorderlessButton style={styles.productLink} onPress={props.link}/>
-            <View style={[styles.productBg, props.styleProductBg]}>
-                <Image style={[styles.productImage, props.styleProductImage]} source={{uri: props.imageURL}} />
+            <View style={[styles.productBg, props.column && styles.productBgColumn]}>
+                <Image style={[styles.productImage, props.column && styles.productImageColumn]} source={{uri: props.imageURL}} />
                 <Text style={styles.productText}>
                     {props.title}
                 </Text>
-                <Image style={[styles.productIcon, props.styleProductIcon]} source={infoIcon}/>
+                <Image style={[styles.productIcon, props.column && styles.productIconColumn]} source={infoIcon}/>
             </View>
         </View>
     )
