@@ -46,7 +46,7 @@ const Register = () => {
     if (register) return (
         <ConfirmScreen
             title="Cadastro concluído!"
-            description="Agora você faz parte da plataforma da Proffy"
+            description="Agora você faz parte da plataforma da Portella Cabos"
             btnTitle="Fazer login"
             navigate={handleNavigateToLogin}
         />
