@@ -4,7 +4,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#E5E5E5',        
-        paddingHorizontal: 30,
         paddingVertical: 10,
         paddingTop: 20,
     },
@@ -18,6 +17,7 @@ const styles = StyleSheet.create({
         height: 10,
         justifyContent: 'flex-end',
         alignItems: 'flex-start',
+        paddingHorizontal: 30,
     },
     dotStyle: {
         backgroundColor: '#c1bccc',
@@ -35,10 +35,12 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 0,
         left: 0,
+        paddingStart: 30
     },
     Item: {
         flex: 1,
         justifyContent: 'space-evenly',
+        marginHorizontal: 30,
     },
     headerItem: {
         marginBottom: 40,
