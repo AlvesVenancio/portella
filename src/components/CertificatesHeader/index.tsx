@@ -8,17 +8,21 @@ import homeIcon from '../../assets/images/icons/home-blue.png';
 import profileIcon from '../../assets/images/icons/profile-blue.png';
 
 import styles from './styles';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { StackParamAuthList } from '../../routes/AuthRoutes';
 
 interface CertificatesHeaderProps {
     children?: React.ReactNode;
 }
 
+type NavigationProps = StackNavigationProp<StackParamAuthList>;
+
 const CertificatesHeader: React.FC<CertificatesHeaderProps> = ({ children }) => {
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<NavigationProps>();
 
     const handleGoAcount = () => {
-        navigation.navigate('Login');
+        navigation.navigate('Study');
     }
 
     return (
