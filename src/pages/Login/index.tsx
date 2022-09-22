@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { View, Image, Text, ScrollView, TouchableWithoutFeedback, KeyboardAvoidingView } from 'react-native';
+import React, { useState, useEffect, useContext } from 'react';
+import { View, Image, Text, ScrollView, TouchableWithoutFeedback, KeyboardAvoidingView, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import FocusButton from '../../components/FocusButton';
@@ -10,16 +10,23 @@ import logo from '../../assets/images/logo.png';
 
 import styles from './styles';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { StackParamList } from '../../routes/AppRoutes';
+import { AuthContext } from '../../contexts/AuthContext';
+
+type NavigationProps = StackNavigationProp<StackParamList>
+
 const Login = () => {
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<NavigationProps>();
 
-    const [firstLaunch, setFirstLaunch] = useState<boolean>();
-    const [email, setEmail] = useState<string>();
+    const [email, setEmail] = useState<string>('');
     const [emailFocus, setEmailFocus] = useState<boolean>(false);
-    const [pass, setPass] = useState<string>();
+    const [password, setPassword] = useState<string>('');
     const [passFocus, setPassFocus] = useState<boolean>(false);
     const [rememberMe, setRememberMe] = useState<boolean>(false);
+
+    const { signIn } = useContext(AuthContext);
 
     useEffect(() => {
     }, []);
@@ -30,6 +37,15 @@ const Login = () => {
 
     const handleNavigateToForgotPass = () => {
         navigation.navigate('ForgotPass');
+    }
+
+    const handleSignIn = async () => {
+        
+        try {
+            await signIn({email, password});
+        } catch (error:any) {
+            Alert.alert(error.message)
+        }
     }
 
     return (
@@ -63,16 +79,19 @@ const Login = () => {
                             keyboardType="email-address"
                             onFocus={() => setEmailFocus(true)}
                             onBlur={() => setEmailFocus(false)}
+                            autoCapitalize="none"
+                            
                         />
                         <TextField
                             style={styles.inputPass}
                             label="Senha"
                             focus={passFocus}
-                            value={pass}
-                            onChangeText={text => setPass(text)}
+                            value={password}
+                            onChangeText={text => setPassword(text)}
                             secureTextEntry={true}
                             onFocus={() => setPassFocus(true)}
                             onBlur={() => setPassFocus(false)}
+                            autoCapitalize="none"
                         />
                     </View>
                     <View style={styles.rememberAndPassBlock}>
@@ -89,8 +108,9 @@ const Login = () => {
                     </View>
                     <FocusButton
                         text="Entrar"
-                        bgColor={email && pass ? '#004354' : '#DCDCE5'}
-                        textColor={email && pass ? '#FFF' : '#9C98A6'}
+                        bgColor={email && password ? '#004354' : '#DCDCE5'}
+                        textColor={email && password ? '#FFF' : '#9C98A6'}
+                        onPress={handleSignIn}
                     />
                 </View>
             </KeyboardAvoidingView>
