@@ -8,6 +8,11 @@ import homeIcon from '../../assets/images/icons/home.png';
 import profileIcon from '../../assets/images/icons/profile.png';
 
 import styles from './styles';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { StackParamAuthList } from '../../routes/AuthRoutes';
+
+type NavigationType = StackNavigationProp<StackParamAuthList>
+
 
 interface PageHeaderProps {
     children?: React.ReactNode;
@@ -15,10 +20,14 @@ interface PageHeaderProps {
 
 const PageHeader: React.FC<PageHeaderProps> = ({ children }) => {
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<NavigationType>();
 
     const handleGoAcount = () => {
-        navigation.navigate('Login');
+        // navigation.navigate('Account');
+    }
+
+    const handleGoHome = () => {
+        navigation.navigate('Slides');
     }
 
     return (
@@ -26,7 +35,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ children }) => {
             <View style={styles.header}>
                 <Image source={logoImg} style={styles.logo} resizeMode={'contain'} />
                 <View style={styles.iconsContainer}>
-                    <BorderlessButton style={{marginRight: 10}}>
+                    <BorderlessButton style={{marginRight: 10}} onPress={handleGoHome}>
                         <Image source={homeIcon} />
                     </BorderlessButton>
                     <BorderlessButton onPress={handleGoAcount}>
