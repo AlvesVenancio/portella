@@ -2,7 +2,8 @@ import React from 'react';
 
 import { Image, StyleSheet, Dimensions } from 'react-native';
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
+import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs';
 
 import About from '../pages/About';
 import Products from '../pages/Products';
@@ -15,6 +16,10 @@ import certificadosIcon from '../assets/images/icons/certificados.png';
 import servicosIcon from '../assets/images/icons/servicos.png';
 import contatosIcon from '../assets/images/icons/contatos.png';
 import navBg from '../assets/images/navigation-tab-background.png';
+import Categories from '../pages/Categories';
+import SubCategories from '../pages/Categories/SubCategories';
+
+const Stack = createStackNavigator();
 
 var width = Dimensions.get('window').width; //full width
 
@@ -39,10 +44,23 @@ const styles = StyleSheet.create({
     }
 });
 
+
+
+const ProductStack = () => {
+    return(
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Categories" component={Categories} />
+        <Stack.Screen name="SubCategories" component={SubCategories} />
+        <Stack.Screen name="Products" component={Products} />
+    </Stack.Navigator>
+    );
+  }
+
 const StudyTabs = () => {
     return (
         <Navigator
-            screenOptions={{
+
+            screenOptions={({ route }) => ({
                 headerShown: false,
                 tabBarStyle: {
                     backgroundColor: '#004354',
@@ -52,9 +70,25 @@ const StudyTabs = () => {
                 },
                 tabBarBackground: () => (
                     <Image source={navBg} style={styles.navBg}/>
-                )
-            }}
+                ),
+                tabBarButton: [
+                  "Slides",
+                ].includes(route.name)
+                  ? () => {
+                      return null;
+                    }
+                  : undefined,
+              })}
+
         >
+
+            <Screen 
+                name="Slides" 
+                component={Slides} 
+                options={{
+                    tabBarIcon: () => null
+                }}
+            />
             <Screen
                 name="Empresa"
                 component={About}
@@ -63,20 +97,26 @@ const StudyTabs = () => {
                     tabBarLabelStyle: styles.tabStyle,
                     tabBarIcon: ({focused}) => {
                         return (
-                            <Image source={empresaIcon} style={styles.tabImages} />
+                            <Image 
+                                source={empresaIcon} 
+                                style={ [styles.tabImages, focused ? {tintColor: '#fff'} : {}  ] } 
+                            />
                         );
                     }
                 }}
             />
             <Screen
                 name="Produtos"
-                component={Products}
+                component={ProductStack}
                 options={{
                     tabBarLabel: 'Produtos',
                     tabBarLabelStyle: styles.tabStyle,
                     tabBarIcon: ({focused}) => {
                         return (
-                            <Image source={produtosIcon} style={styles.tabImages} />
+                            <Image 
+                                source={produtosIcon} 
+                                style={ [styles.tabImages, focused ? {tintColor: '#fff'} : {}  ] } 
+                            />
                         );
                     }
                 }}
@@ -89,7 +129,10 @@ const StudyTabs = () => {
                     tabBarLabelStyle: styles.tabStyle,
                     tabBarIcon: ({focused}) => {
                         return (
-                            <Image source={certificadosIcon} style={styles.tabImages} />
+                            <Image 
+                                source={certificadosIcon} 
+                                style={ [styles.tabImages, focused ? {tintColor: '#fff'} : {}  ] } 
+                            />
                         );
                     }
                 }}
@@ -102,7 +145,10 @@ const StudyTabs = () => {
                     tabBarLabelStyle: styles.tabStyle,
                     tabBarIcon: ({focused}) => {
                         return (
-                            <Image source={servicosIcon} style={styles.tabImages} />
+                            <Image 
+                                source={servicosIcon}
+                                style={ [styles.tabImages, focused ? {tintColor: '#fff'} : {}  ] } 
+                            />
                         );
                     }
                 }}
@@ -115,7 +161,10 @@ const StudyTabs = () => {
                     tabBarLabelStyle: styles.tabStyle,
                     tabBarIcon: ({focused}) => {
                         return (
-                            <Image source={contatosIcon} style={styles.tabImages} />
+                            <Image 
+                                source={contatosIcon} 
+                                style={ [styles.tabImages, focused ? {tintColor: '#fff'} : {}  ] } 
+                            />
                         );
                     }
                 }}
