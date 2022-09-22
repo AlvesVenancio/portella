@@ -7,6 +7,7 @@ import { Oswald_400Regular, Oswald_500Medium, Oswald_600SemiBold, Oswald_700Bold
 import { OpenSans_400Regular, OpenSans_600SemiBold, OpenSans_700Bold } from '@expo-google-fonts/open-sans'
 
 import AppStack from './src/routes/AppStack';
+import { AuthProvider } from './src/contexts/AuthContext';
 
 AppLoading.preventAutoHideAsync();
 
@@ -34,10 +35,10 @@ export default function App() {
   } else {
     AppLoading.hideAsync();
     return (
-      <>
+      <AuthProvider>
         <AppStack />
         <StatusBar style="light" />
-      </>
+      </AuthProvider>
     );
   }
 }
