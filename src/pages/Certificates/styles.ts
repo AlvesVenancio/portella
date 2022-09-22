@@ -1,13 +1,15 @@
 import { StyleSheet } from 'react-native';
+import { Dimensions } from 'react-native'
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#131313'
     },
-
-    scrollView: {
+    containt: {
         paddingTop: 20,
+        paddingHorizontal: 16,
     },
 
     certificatesContainer: {
@@ -26,6 +28,12 @@ const styles = StyleSheet.create({
     inputSearch: {
         borderRadius: 12,
         marginBottom: 30,
+        paddingTop: 15,
+    },
+
+    flatList: {
+        flexGrow: 0, 
+        height: (windowHeight * 0.23) + windowHeight,
     }
 
 })
