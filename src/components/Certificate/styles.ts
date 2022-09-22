@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent:'center',
         alignItems: 'center',
-        marginBottom: 20,
+        marginBottom: 18,
     },
 
     certificateLink: {
