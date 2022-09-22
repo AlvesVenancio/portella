@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         zIndex: -1,
     },
     cardCarousel: {
-        width: slider_width,
+        width: Math.round( slider_width * 1.2),
     },
     image: {
         height: ViewerHeight,

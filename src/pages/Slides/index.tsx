@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Dimensions, Image } from 'react-native';
 import PageHeader from '../../components/PageHeader';
 
@@ -7,6 +7,7 @@ import Carousel from 'react-native-snap-carousel';
 import styles from './styles';
 
 import PageHeaderBottomBlur from '../../components/PageHeaderBottomBlur';
+import { AuthContext } from '../../contexts/AuthContext';
 
 type Props = {
     item: {
@@ -40,7 +41,8 @@ const CarouselCardItem = ({item, index}: Props) => {
 // return require('deprecated-react-native-prop-types').ColorPropType;
 
 const Main = () => {
-
+    const { isAuthenticated } = useContext(AuthContext);
+    
     return (
         <>
             <PageHeader>
