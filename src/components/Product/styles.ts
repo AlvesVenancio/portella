@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems: 'center',
         marginBottom: 20,
+        
     },
 
     productLink: {
@@ -18,8 +19,8 @@ const styles = StyleSheet.create({
     },
 
     productImage: {
-        width: 45,
-        height: 45,
+        width: 40,
+        height: 40,
         zIndex: 999,
         position: 'absolute',
         top: -10,
@@ -41,6 +42,7 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase',
         fontSize: 10,
         fontFamily: 'Montserrat_700Bold',
+        paddingHorizontal: 5,
     },
 
     productIcon: {
@@ -54,6 +56,12 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
 
+    productGridItem: {
+        width: '33.3%',
+        paddingHorizontal: 10,
+        marginBottom: 30,
+    },
+
     productBgColumn: {
         alignItems: 'center',
         justifyContent: 'space-around',
@@ -61,6 +69,11 @@ const styles = StyleSheet.create({
         paddingBottom: 0,
         height: 60,
     },
+
+    productBgColumnText: {
+        width: '70%'
+    },
+
 
     productImageColumn: {
         position: 'relative',
