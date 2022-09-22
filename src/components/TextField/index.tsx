@@ -7,44 +7,96 @@ import hidePassword from '../../assets/images/icons/hide-password.png';
 import searchIcon from '../../assets/images/icons/search_icon.png';
 
 import styles from './styles';
+import { maskCPF, maskPhone, maskDate } from './mask.utils';
 
 interface TextFieldProps extends TextInputProps {
-    label?: String;
-    focus: Boolean;
-    search?: Boolean;
+    label?: string;
+    focus: boolean;
+    search?: boolean;
+    secureTextEntry?: boolean | undefined;
+    mask?: "cpf" | "phone" | "date"
+    inputMaskChange?: any
 }
 
-const TextField: React.FC<TextFieldProps> = (props) => {
+
+
+const TextField: React.FC<TextFieldProps> = ({
+    style,
+    value,
+    label,
+    focus,
+    search, 
+    secureTextEntry,
+    mask,
+    inputMaskChange,
+    ...rest
+}) => {
 
     const [hidePass, setHidePass] = useState<boolean>(true);
 
+    function handleChange(text: string) {
+        let value = text;
+
+        if (mask === "cpf") {
+          value = maskCPF(text);
+        }
+        if (mask === "phone") {
+          value = maskPhone(text);
+        }
+        if (mask === "date") {
+          value = maskDate(text);
+        }
+
+        inputMaskChange(value);
+      }
+
     return (
-        <View style={[styles.container, props.style]}>
+        <View style={[styles.container, style]}>
             <Text
                 style={[
                     styles.placeHolder,
-                    props.focus || props.value ? styles.placeHolderFocus : {},
-                    props.search ? {
+                    focus || value ? styles.placeHolderFocus : {},
+                    search ? {
                         color: '#8f9aa3',
                         fontSize: 16,
                     } : {},
                 ]}
             >
-                {props.label}
+                {label}
             </Text>
-            {props.focus && <View style={styles.dash} />}
-            <TextInput
-                style={[styles.input, props.search ? {borderColor: 'transparent'} : {}, props.focus || props.value ? styles.inputFocus : {}]}
-                value={props.value}
-                onChangeText={props.onChangeText}
-                keyboardType={props.keyboardType}
-                onFocus={props.onFocus}
-                onBlur={props.onBlur}
-                secureTextEntry={props.secureTextEntry && hidePass}
-                autoCorrect={false}
-            />
+            {focus && <View style={styles.dash} />}
+
+            { ! inputMaskChange && (
+                <TextInput
+                    style={[
+                        styles.input, search 
+                            ? {borderColor: 'transparent'} 
+                            : {}, focus || value ? styles.inputFocus : {}
+                    ]}
+                    value={value}
+                    secureTextEntry={secureTextEntry && hidePass}
+                    autoCorrect={false}
+                    {...rest}
+                />
+            )}
+
+            { inputMaskChange && (
+                <TextInput
+                    style={[
+                        styles.input, search 
+                            ? {borderColor: 'transparent'} 
+                            : {}, focus || value ? styles.inputFocus : {}
+                    ]}
+                    value={value}
+                    secureTextEntry={secureTextEntry && hidePass}
+                    autoCorrect={false}
+                    onChangeText={(text) => handleChange(text)}
+                    {...rest}
+                />
+            )}
+
             {
-                props.secureTextEntry &&
+                secureTextEntry &&
                 <TouchableWithoutFeedback
                     onPress={() => hidePass ? setHidePass(false) : setHidePass(true)}
                 >
@@ -60,7 +112,7 @@ const TextField: React.FC<TextFieldProps> = (props) => {
                 </TouchableWithoutFeedback>
             }
             {
-                props.search &&
+                search &&
                 <Image style={styles.searchIcon} source={searchIcon}/>
             }
         </View>
