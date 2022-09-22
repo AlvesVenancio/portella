@@ -3,11 +3,11 @@ import { View, Text, ScrollView, Image, ImageBackground } from 'react-native';
 
 import PageHeader from '../../components/PageHeader';
 
-import aboutImg from '../../assets/images/quemsomos.jpg';
-
 import styles from './styles';
 
 const About = () => {
+
+    const aboutImg = require('../../assets/images/quemsomos.jpg');
 
     return (
         <View style={styles.container}>
