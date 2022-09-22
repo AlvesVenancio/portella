@@ -9,9 +9,14 @@ import { RectButton } from 'react-native-gesture-handler';
 import logo from '../../assets/images/logo.png';
 import MainBg from '../../assets/images/mainbg.png';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { StackParamList } from '../../routes/AppRoutes';
+
+type NavigationProps = StackNavigationProp<StackParamList>;
+
 const Login = () => {
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<NavigationProps>();
 
     const handleNavigateToRegister = () => {
         navigation.navigate('Register');
