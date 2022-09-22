@@ -1,22 +1,34 @@
 import React, { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 
-import { useNavigation } from '@react-navigation/native';
+
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 
 import PageHeader from '../../components/PageHeader';
 
+import {Product} from '../../components/Product';
+
 import styles from './styles';
-import Product from '../../components/Product';
+
+import { StackParamAuthList } from '../../routes/AuthRoutes';
+import { StackNavigationProp } from '@react-navigation/stack';
+
+type NavigationType = StackNavigationProp<StackParamAuthList>
 
 
+type RouteParams = {
+    Product:{id: number};
+}
 const Products = () => {
 
     const [layoutColumn, setLayoutColumn] = useState<boolean>(true);
     
-    const navigation = useNavigation();
+    const navigation = useNavigation<NavigationType>();
+
+    const route = useRoute<RouteProp <RouteParams>>();
 
     const handleNavigateToLogin = () => {
-        navigation.navigate('Login');
+        console.log(route.params)
     }
 
     const handleLayout = () => {
@@ -38,110 +50,9 @@ const Products = () => {
                         title='Product{\n}name'
                         imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
                         link={handleLayout}
-                        column={layoutColumn}
+                        column={true}
                     />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
-                    <Product
-                        title='Product{\n}name'
-                        imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
-                        column={layoutColumn}
-                    />
+                   
                 </View>
             </ScrollView>
         </View>
