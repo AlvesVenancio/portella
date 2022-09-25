@@ -9,6 +9,7 @@ import ForgotPass from '../pages/ForgotPass';
 import Slides from '../pages/Slides';
 import About from '../pages/About';
 import Products from '../pages/Products';
+import ProductsTable from '../pages/ProductsTable';
 import Certificates from '../pages/Certificates';
 
 import StudyTabs from './StudyTabs';
@@ -19,10 +20,11 @@ const AppStack = () => {
     return (
         <NavigationContainer>
             <Navigator screenOptions={{ headerShown: false }}>
-                <Screen name="Main" component={Main} />
                 <Screen name="Study" component={StudyTabs} />
+                <Screen name="Main" component={Main} />
                 <Screen name="About" component={About} />
                 <Screen name="Products" component={Products} />
+                <Screen name="ProductsTable" component={ProductsTable} />
                 <Screen name="Certificates" component={Certificates} />
                 <Screen name="Login" component={Login} />
                 <Screen name="Slides" component={Slides} />

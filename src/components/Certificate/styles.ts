@@ -38,13 +38,17 @@ const styles = StyleSheet.create({
     },
 
     certificateText: {
-        color: '#8a8383',
+        color: '#070707',
         textTransform: 'uppercase',
         fontSize: 16,
-        fontFamily: 'OpenSans_600SemiBold',
+        fontFamily: 'OpenSans_700Bold',
         textAlign: 'left',
         width: '60%',
     },
+    
+    certificateTextCod: {
+        fontFamily: 'OpenSans_400Regular',
+    }
 
 })
 

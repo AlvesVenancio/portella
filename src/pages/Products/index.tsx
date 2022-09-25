@@ -19,6 +19,10 @@ const Products = () => {
         navigation.navigate('Login');
     }
 
+    const handleNavigateToProductsTable = () => {
+        navigation.navigate('Study', {screen: 'ProductsTable'});
+    }
+
     const handleLayout = () => {
         layoutColumn ? setLayoutColumn(false) : setLayoutColumn(true)
     }
@@ -43,7 +47,7 @@ const Products = () => {
                     <Product
                         title='Product{\n}name'
                         imageURL='https://www.portellacabos.com.br/wp-content/uploads/2022/06/imagem_2022-06-01_101138780-e1654635592256-300x311.png'
-                        link={handleNavigateToLogin}
+                        link={handleNavigateToProductsTable}
                         column={layoutColumn}
                     />
                     <Product

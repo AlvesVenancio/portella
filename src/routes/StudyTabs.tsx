@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import About from '../pages/About';
 import Products from '../pages/Products';
+import ProductsTable from '../pages/ProductsTable';
 import Certificates from '../pages/Certificates';
 import Slides from '../pages/Slides';
 
@@ -42,6 +43,7 @@ const styles = StyleSheet.create({
 const StudyTabs = () => {
     return (
         <Navigator
+            initialRouteName='Contatos'
             screenOptions={{
                 headerShown: false,
                 tabBarStyle: {

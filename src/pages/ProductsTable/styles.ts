@@ -10,23 +10,12 @@ const styles = StyleSheet.create({
         paddingTop: 20,
     },
 
-    certificatesContainer: {
+    productsContainer: {
         justifyContent: 'space-between',
         flexDirection: 'row',
         flexWrap: 'wrap',
     },
 
-    resultText: {
-        color: '#3c99dd',
-        marginBottom: 30,
-        fontFamily: 'OpenSans_700Bold',
-        fontSize: 18,
-    },
-
-    inputSearch: {
-        borderRadius: 12,
-        marginBottom: 30,
-    }
 
 })
 

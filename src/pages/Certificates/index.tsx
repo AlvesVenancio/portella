@@ -3,7 +3,7 @@ import { View, ScrollView, Text } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
-import CertificatesHeader from '../../components/CertificatesHeader';
+import PageHeader from '../../components/PageHeader';
 
 import styles from './styles';
 import Certificate from '../../components/Certificate';
@@ -23,7 +23,7 @@ const Certificates = () => {
 
     return (
         <View style={styles.container}>
-            <CertificatesHeader />
+            <PageHeader />
             <ScrollView
                 style={styles.scrollView}
                 contentContainerStyle={{

@@ -24,7 +24,9 @@ const Certificate: React.FC<CertificateProps> = (props) => {
                 <Text style={styles.certificateText}>
                     {props.title}
                     {'\n'}
-                    {props.cod}
+                    <Text style={styles.certificateTextCod}>
+                        {props.cod}
+                    </Text>
                 </Text>
                 <Image style={styles.downloadIcon} source={downloadIcon}/>
             </View>
