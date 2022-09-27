@@ -20,11 +20,11 @@ const AppStack = () => {
     return (
         <NavigationContainer>
             <Navigator screenOptions={{ headerShown: false }}>
+                <Screen name="ProductsTable" component={ProductsTable} />
                 <Screen name="Study" component={StudyTabs} />
                 <Screen name="Main" component={Main} />
                 <Screen name="About" component={About} />
                 <Screen name="Products" component={Products} />
-                <Screen name="ProductsTable" component={ProductsTable} />
                 <Screen name="Certificates" component={Certificates} />
                 <Screen name="Login" component={Login} />
                 <Screen name="Slides" component={Slides} />
