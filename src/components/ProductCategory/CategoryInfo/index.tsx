@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Image, Text } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import CategoryTableHead from '../CategoryTableHead';
 import ProductTableLine from '../ProductTableLine';
 
 import styles from './styles';
@@ -12,6 +13,18 @@ interface categoryInfoProps {
         imgUrl: string
     }[],
     products: {
+        a: string,
+        b: string,
+        c: string,
+        d: string,
+        e: string,
+        f: string,
+        g: string,
+        h: string,
+        i: string,
+        j: string,
+    }[],
+    tableHead: {
         a: string,
         b: string,
         c: string,
@@ -49,6 +62,7 @@ const categoryInfo: React.FC<categoryInfoProps> = (props) => {
                 horizontal
             >
                 <View>
+                    <CategoryTableHead tableHead={props.tableHead} />
                     <ProductTableLine products={props.products} />
                 </View>
             </ScrollView>

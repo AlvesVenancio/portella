@@ -34,6 +34,33 @@ const products = [
     {a: 'DOOP-25',b: '1″',c: '25,',d: '63',e: '63',f: '25',g: '62',h: '277',i: '5.670',j: '3,60'},
 ];
 
+const tableHead = [
+    {
+        a: '',
+        b: 'A',
+        c: '',
+        d: '',
+        e: '',
+        f: 'Dimensões\nmm',
+        g: '',
+        h: '',
+        i: 'Carga de\nTrab.',
+        j: 'Peso\nunit.',
+    },
+    {
+        a: 'REF',
+        b: 'pol',
+        c: 'mm',
+        d: 'B',
+        e: 'C',
+        f: 'D',
+        g: 'E',
+        h: 'F',
+        i: 'kgf',
+        j: 'kg',
+    }
+];
+
 const ProductsTable = () => {
     
     const navigation = useNavigation(); 
@@ -58,6 +85,7 @@ const ProductsTable = () => {
                         subCategory='Destorcedor Olhal x Olhal'
                         categoryImages={categoryImages}
                         products={products}
+                        tableHead={tableHead}
                     />
                 </View>
 
