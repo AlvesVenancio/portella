@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
         borderLeftColor: '#0f1621',
         borderTopWidth: 2,
         borderTopColor: '#0f1621',
+        marginBottom: 40,
     },
 
 });
