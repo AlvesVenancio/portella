@@ -7,6 +7,7 @@ import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom
 
 import About from '../pages/About';
 import Products from '../pages/Products';
+import ProductsTable from '../pages/ProductsTable';
 import Certificates from '../pages/Certificates';
 import Slides from '../pages/Slides';
 

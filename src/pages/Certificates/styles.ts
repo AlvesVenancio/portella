@@ -5,7 +5,7 @@ const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#131313'
+        backgroundColor: '#e6e6e6'
     },
     containt: {
         paddingTop: 20,

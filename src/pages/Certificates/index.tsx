@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import * as FileSystem from 'expo-file-system';
 
-import CertificatesHeader from '../../components/CertificatesHeader';
+import PageHeader from '../../components/PageHeader';
 
 import styles from './styles';
 import Certificate from '../../components/Certificate';
@@ -230,7 +230,7 @@ const Certificates = () => {
         )}
         { ! pdfIsOpen && (
             <View style={styles.container}>
-                <CertificatesHeader />
+                <PageHeader />
                 <View
                     style={styles.containt}
                 >
