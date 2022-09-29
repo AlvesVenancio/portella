@@ -53,6 +53,7 @@ const ProductStack = () => {
         <Stack.Screen name="Categories" component={Categories} />
         <Stack.Screen name="SubCategories" component={SubCategories} />
         <Stack.Screen name="Products" component={Products} />
+        <Screen name="ProductsTable" component={ProductsTable} /> 
     </Stack.Navigator>
     );
   }

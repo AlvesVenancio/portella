@@ -66,7 +66,8 @@ const ProductsTable = () => {
     const navigation = useNavigation(); 
 
     const handleNavigateToLogin = () => {
-        navigation.navigate('Login');
+        // navigation.navigate('Login');
+        console.log('teste');
     }
 
     return (

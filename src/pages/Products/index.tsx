@@ -31,9 +31,9 @@ const Products = () => {
         console.log(route.params)
     }
 
-    const handleNavigateToProductsTable = () => {
-        navigation.navigate('Study', {screen: 'ProductsTable'});
-    }
+    // const handleNavigateToProductsTable = () => {
+        // navigation.navigate('Study', {screen: 'ProductsTable'});
+    // }
 
     const handleLayout = () => {
         layoutColumn ? setLayoutColumn(false) : setLayoutColumn(true)

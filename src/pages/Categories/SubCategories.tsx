@@ -38,8 +38,8 @@ const SubCategories = () => {
 
     const route = useRoute<RouteProp <RouteParams>>();
 
-    const handleNavigateToProducts = (id: number) => {
-        navigation.navigate('Products', { id });
+    const handleNavigateToProduct = (id: number) => {
+        navigation.navigate('ProductsTable');
     }
 
     const handleNavigateToLogin = () => {
@@ -110,7 +110,7 @@ const SubCategories = () => {
                 key={item.id}
                 title={item.name}
                 imageURL={item?.image?.src}
-                link={() => handleNavigateToProducts(item.id)}
+                link={() => handleNavigateToProduct(item.id)}
                 column={true}
             />
         )
