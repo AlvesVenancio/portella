@@ -2,8 +2,8 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#e6e6e6'
+        backgroundColor: '#e6e6e6',
+        paddingBottom: 30,
     },
     
     scrollView: {
@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
     },
     
     webView: {
-        height: 800,
         flex: 1,
         backgroundColor: '#e6e6e6',
     },
