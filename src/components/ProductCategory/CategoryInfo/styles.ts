@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 10,
         elevation: 2,
-        marginVertical: 10,
+        marginTop: 10,
         marginRight: 20,
     },
 
@@ -36,15 +36,6 @@ const styles = StyleSheet.create({
         width: '60%',
         height: '60%',
         resizeMode: 'contain',
-    },
-
-    tableScroll: {
-        backgroundColor: 'white',
-        borderLeftWidth: 2,
-        borderLeftColor: '#0f1621',
-        borderTopWidth: 2,
-        borderTopColor: '#0f1621',
-        marginBottom: 40,
     },
 
 });

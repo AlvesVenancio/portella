@@ -11,30 +11,6 @@ interface categoryInfoProps {
     subCategory: string,
     categoryImages: {
         imgUrl: string
-    }[],
-    products: {
-        a: string,
-        b: string,
-        c: string,
-        d: string,
-        e: string,
-        f: string,
-        g: string,
-        h: string,
-        i: string,
-        j: string,
-    }[],
-    tableHead: {
-        a: string,
-        b: string,
-        c: string,
-        d: string,
-        e: string,
-        f: string,
-        g: string,
-        h: string,
-        i: string,
-        j: string,
     }[]
 }
 
@@ -56,15 +32,6 @@ const categoryInfo: React.FC<categoryInfoProps> = (props) => {
                     </View>
                 ))}
 
-            </ScrollView>
-            <ScrollView
-                style={styles.tableScroll}
-                horizontal
-            >
-                <View>
-                    <CategoryTableHead tableHead={props.tableHead} />
-                    <ProductTableLine products={props.products} />
-                </View>
             </ScrollView>
         </View>
     );
