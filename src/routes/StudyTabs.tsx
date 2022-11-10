@@ -5,6 +5,8 @@ import { Image, StyleSheet, Dimensions } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import About from '../pages/About';
+import Services from '../pages/Services';
+import Contact from '../pages/Contact';
 import Products from '../pages/Products';
 import ProductsTable from '../pages/ProductsTable';
 import Certificates from '../pages/Certificates';
@@ -98,7 +100,7 @@ const StudyTabs = () => {
             />
             <Screen
                 name="Servicos"
-                component={About}
+                component={Services}
                 options={{
                     tabBarLabel: 'Serviços',
                     tabBarLabelStyle: styles.tabStyle,
@@ -111,7 +113,7 @@ const StudyTabs = () => {
             />
             <Screen
                 name="Contatos"
-                component={Slides}
+                component={Contact}
                 options={{
                     tabBarLabel: 'Contatos',
                     tabBarLabelStyle: styles.tabStyle,

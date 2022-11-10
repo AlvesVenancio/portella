@@ -38,6 +38,8 @@ const TextField: React.FC<TextFieldProps> = (props) => {
                 value={props.value}
                 onChangeText={props.onChangeText}
                 keyboardType={props.keyboardType}
+                multiline={props.multiline}
+                numberOfLines={props.numberOfLines}
                 onFocus={props.onFocus}
                 onBlur={props.onBlur}
                 secureTextEntry={props.secureTextEntry && hidePass}

@@ -8,6 +8,8 @@ import Register from '../pages/Register';
 import ForgotPass from '../pages/ForgotPass';
 import Slides from '../pages/Slides';
 import About from '../pages/About';
+import Services from '../pages/Services';
+import Contact from '../pages/Contact';
 import Products from '../pages/Products';
 import ProductsTable from '../pages/ProductsTable';
 import Certificates from '../pages/Certificates';
@@ -20,10 +22,12 @@ const AppStack = () => {
     return (
         <NavigationContainer>
             <Navigator screenOptions={{ headerShown: false }}>
-                <Screen name="ProductsTable" component={ProductsTable} />
                 <Screen name="Study" component={StudyTabs} />
+                <Screen name="ProductsTable" component={ProductsTable} />
                 <Screen name="Main" component={Main} />
                 <Screen name="About" component={About} />
+                <Screen name="Services" component={Services} />
+                <Screen name="Contact" component={Contact} />
                 <Screen name="Products" component={Products} />
                 <Screen name="Certificates" component={Certificates} />
                 <Screen name="Login" component={Login} />
