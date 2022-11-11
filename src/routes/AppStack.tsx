@@ -7,6 +7,7 @@ import AppRoutes from "./AppRoutes";
 import AuthRoutes from "./AuthRoutes";
 
 const AppStack = () => {
+    
     const { isAuthenticated } = useContext(AuthContext);
 
     return isAuthenticated ? <AuthRoutes/> : <AppRoutes/>

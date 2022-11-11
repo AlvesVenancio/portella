@@ -29,7 +29,25 @@ const styles = StyleSheet.create({
         color: '#888',
         fontWeight: '500'
     },
-
+    goBackButton: {
+        width: '12%',
+    },
+    safeAreaWebView:{
+        flex: 1,
+        backgroundColor: '#004354'
+    },
+    webViewHeaderBar: {
+        height: 50,
+        backgroundColor: '#004354',
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingLeft: 10,
+    },
+    webViewTitle: {
+        color: '#fff',
+        fontWeight: '600',
+        fontSize: 16
+    },
 
 })
 

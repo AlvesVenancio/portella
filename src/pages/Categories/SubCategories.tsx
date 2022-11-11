@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, ActivityIndicator, ListRenderItem, FlatList, Text } from 'react-native';
+import { View, ActivityIndicator, ListRenderItem, FlatList, Text, SafeAreaView } from 'react-native';
 
-import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
+import { WebView } from "react-native-webview";
+
+import { RouteProp, useRoute } from '@react-navigation/native';
 
 import {Product} from '../../components/Product';
 
@@ -9,13 +11,16 @@ import PageHeader from '../../components/PageHeader';
 
 import apiProd from '../../services/apiProd';
 
+import { strSlugify } from "../../utils/text";
+
+import {Feather} from '@expo/vector-icons';
+
 import styles from './styles';
 
-import { StackParamAuthList } from '../../routes/AuthRoutes';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { Category } from '.';
+import { BorderlessButton } from 'react-native-gesture-handler';
 
-type NavigationType = StackNavigationProp<StackParamAuthList>
+
 
 type RouteParams = {
     Category:{
@@ -31,19 +36,28 @@ const SubCategories = () => {
     const [loadedPages, setLoadedPages] = useState<number>(0);
     const [loading, setLoading] = useState<boolean>(false);
     const [loadAll, setLoadAll] = useState<boolean>(false);
-    
-    const navigation = useNavigation<NavigationType>();
+
+    const [pdfData , setPdfData] = useState({name: '', url: ''})
+
 
     const flatRef = useRef(null);
 
     const route = useRoute<RouteProp <RouteParams>>();
 
-    const handleNavigateToProduct = (id: number) => {
-        navigation.navigate('ProductsTable');
+    const baseUrlPdf = (uri: string) => {
+        const categorySlug = strSlugify(route.params.category);
+
+        return `https://app.portellacabos.com.br/products/${categorySlug}/${uri}.pdf`;
     }
 
-    const handleNavigateToLogin = () => {
-        console.log(route.params.parent)
+    const handleNavigateToProduct = (name: string, slug: string) => {
+
+        setPdfData({name, url: baseUrlPdf(slug) });
+        
+    }
+
+    const handleClosePdfWebView = () => {
+        setPdfData({name: '', url: '' });
     }
 
     async function getCategories ()  {
@@ -98,7 +112,6 @@ const SubCategories = () => {
     }
 
     useEffect(()=>{
-
         getCategories();
 
     }, []);
@@ -110,7 +123,7 @@ const SubCategories = () => {
                 key={item.id}
                 title={item.name}
                 imageURL={item?.image?.src}
-                link={() => handleNavigateToProduct(item.id)}
+                link={() => handleNavigateToProduct(item.name, item.slug)}
                 column={true}
             />
         )
@@ -128,29 +141,51 @@ const SubCategories = () => {
     };
 
     return (
-        <View style={styles.container}>
-            <PageHeader />
- 
-            <View style={styles.headerContainer}>
-                <Text style={styles.textSecondary}>{route.params.category}</Text>
-            </View>
-            <View style={[styles.productsContainer, {height:'77%', paddingHorizontal: 20} ]}>
+        <>
+            { pdfData.url != '' &&
 
-                <FlatList
-                    ref={flatRef}
-                    data={categories}
-                    style={[styles.flatList]}
-                    keyExtractor={item => String(item.id)}
-                    showsVerticalScrollIndicator={false}
-                    numColumns={3}
-                    ListFooterComponent={<ListFooter load={loading}/>}
-                    onEndReached={getCategories}
-                    onEndReachedThreshold={0.2}
-                    renderItem={renderItem}
-                
-                />
-            </View>
-        </View>
+                <SafeAreaView style={styles.safeAreaWebView}>
+                    <View style={styles.webViewHeaderBar}>
+                        <BorderlessButton style={styles.goBackButton} onPress={handleClosePdfWebView} >
+                            <Feather name="chevron-left" size={20} color="#FFFFFF" />                
+                        </BorderlessButton>
+                       <View>
+                            <Text style={styles.webViewTitle}>{pdfData.name}</Text>
+                        </View>
+                    </View>
+                    
+                    <WebView
+                        source={{ uri: pdfData.url }}
+                    />
+                </SafeAreaView>
+            }
+            { pdfData?.url == '' &&
+                <View style={styles.container}>
+
+                    <PageHeader />
+        
+                    <View style={styles.headerContainer}>
+                        <Text style={styles.textSecondary}>{route.params.category}</Text>
+                    </View>
+                    <View style={[styles.productsContainer, {height:'77%', paddingHorizontal: 20} ]}>
+
+                        <FlatList
+                            ref={flatRef}
+                            data={categories}
+                            style={[styles.flatList]}
+                            keyExtractor={item => String(item.id)}
+                            showsVerticalScrollIndicator={false}
+                            numColumns={3}
+                            ListFooterComponent={<ListFooter load={loading}/>}
+                            onEndReached={getCategories}
+                            onEndReachedThreshold={0.2}
+                            renderItem={renderItem}
+                        
+                        />
+                    </View>
+                </View>
+            }
+        </>
     );
 }
 

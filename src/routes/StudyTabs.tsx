@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'Montserrat_700Bold',
         fontSize: 10,
+        paddingBottom: 15,
         textTransform: 'uppercase',
     },
     navBg: {
