@@ -1,11 +1,15 @@
-import React, { ReactNode } from 'react';
-import { Image, View, Text } from 'react-native';
+import React  from 'react';
+import { Image, View, Linking } from 'react-native';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
+
 import logoImg from '../../assets/images/logo.png';
-import homeIcon from '../../assets/images/icons/home.png';
+// import homeIcon from '../../assets/images/icons/home.png';
+import {  FontAwesome5 } from '@expo/vector-icons';
+
 import profileIcon from '../../assets/images/icons/profile.png';
+
 
 import styles from './styles';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -22,8 +26,8 @@ const PageHeader: React.FC<PageHeaderProps> = ({ children }) => {
 
     const navigation = useNavigation<NavigationType>();
 
-    const handleGoAcount = () => {
-        // navigation.navigate('Account');
+    const handleWppChat = () => {
+        Linking.openURL('https://wa.me/5521965250676');
     }
 
     const handleGoHome = () => {
@@ -33,13 +37,13 @@ const PageHeader: React.FC<PageHeaderProps> = ({ children }) => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image source={logoImg} style={styles.logo} resizeMode={'contain'} />
+                <BorderlessButton onPress={handleGoHome}>
+                    <Image source={logoImg} style={styles.logo} resizeMode={'contain'} />
+                </BorderlessButton>
                 <View style={styles.iconsContainer}>
-                    <BorderlessButton style={{marginRight: 10}} onPress={handleGoHome}>
-                        <Image source={homeIcon} />
-                    </BorderlessButton>
-                    <BorderlessButton onPress={handleGoAcount}>
-                        <Image source={profileIcon} />
+       
+                    <BorderlessButton onPress={handleWppChat}>
+                        <FontAwesome5 name="whatsapp" size={22} color="#fff"/>
                     </BorderlessButton>
                 </View>
             </View>
