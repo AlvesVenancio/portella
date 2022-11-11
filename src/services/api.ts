@@ -19,7 +19,7 @@ type FailRequestQueue = {
 let isRefreshing = false;
 let failRequestQueue = Array<FailRequestQueue>();
 
-const baseURL = __DEV__ ? 'http://localhost/portella-adm/api/' : 'https://DEFINIR-ENDERECO';
+const baseURL = __DEV__ ? 'http://192.168.100.2/portella-adm/api/' : 'https://app.portellacabos.com.br/api/';
 // const baseURL = 'https://app.portellacabos.com.br/api/';
 
 const api = axios.create({ baseURL });
