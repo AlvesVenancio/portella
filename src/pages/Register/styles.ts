@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#E5E5E5',        
         paddingVertical: 10,
-        paddingTop: 20,
+        paddingTop: 40,
     },
     swiperContainer: {
         flex: 1,
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-evenly',
         marginHorizontal: 30,
+        marginBottom: 30
     },
     headerItem: {
         marginBottom: 40,
