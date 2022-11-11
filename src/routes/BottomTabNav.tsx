@@ -20,6 +20,7 @@ import navBg from '../assets/images/navigation-tab-background.png';
 import Categories from '../pages/Categories';
 import SubCategories from '../pages/Categories/SubCategories';
 import Contact from '../pages/Contact';
+import CompanyServices from '../pages/CompanyServices';
 
 const Stack = createStackNavigator();
 
@@ -143,7 +144,7 @@ const BottomTabNav = () => {
             />
             <Screen
                 name="Servicos"
-                component={About}
+                component={CompanyServices}
                 options={{
                     tabBarLabel: 'Serviços',
                     tabBarLabelStyle: styles.tabStyle,
