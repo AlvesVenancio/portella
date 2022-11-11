@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         padding: 15,        
     },
     inputFocus: {
-        paddingTop: 25,
+        paddingTop: 27,
         paddingBottom: 5,
     },
     placeHolder: {

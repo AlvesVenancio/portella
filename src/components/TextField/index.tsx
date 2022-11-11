@@ -14,8 +14,9 @@ interface TextFieldProps extends TextInputProps {
     focus: boolean;
     search?: boolean;
     secureTextEntry?: boolean | undefined;
-    mask?: "cpf" | "phone" | "date"
-    inputMaskChange?: any
+    mask?: "cpf" | "phone" | "date";
+    inputMaskChange?: any;
+    multiline?: boolean;
 }
 
 
@@ -29,6 +30,7 @@ const TextField: React.FC<TextFieldProps> = ({
     secureTextEntry,
     mask,
     inputMaskChange,
+    multiline = false,
     ...rest
 }) => {
 
@@ -64,18 +66,20 @@ const TextField: React.FC<TextFieldProps> = ({
             >
                 {label}
             </Text>
-            {focus && <View style={styles.dash} />}
+            {focus && <View style={[styles.dash, multiline ? {height: 118} : {}]} />}
 
             { ! inputMaskChange && (
                 <TextInput
                     style={[
-                        styles.input, search 
-                            ? {borderColor: 'transparent'} 
-                            : {}, focus || value ? styles.inputFocus : {}
+                        styles.input, 
+                        search ? {borderColor: 'transparent'} : {}, 
+                        focus || value ? styles.inputFocus : {},
+                        multiline ? {height: 130} : {}
                     ]}
                     value={value}
                     secureTextEntry={secureTextEntry && hidePass}
                     autoCorrect={false}
+                    multiline={multiline}
                     {...rest}
                 />
             )}
