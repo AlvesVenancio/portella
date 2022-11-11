@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Image, Text, View, KeyboardAvoidingView, Keyboard, Platform, ScrollView, Alert } from 'react-native';
-import Swiper from 'react-native-swiper';
+import React, {  useState } from 'react';
+import { Image, Text, View, KeyboardAvoidingView, Platform, ScrollView, Alert } from 'react-native';
+
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
@@ -62,24 +62,12 @@ const Register = () => {
   const [phone, setPhone] = useState<string>();
   const [phoneFocus, setPhoneFocus] = useState<boolean>(false);
 
-  const [headerVisible, setHeaderVisible] = useState<boolean>(true);
   const [register, setRegister] = useState<boolean>(false);
   const [awaitRegister, setAwaitRegister] = useState<boolean>(false);
 
   const [totalSlides, setTotalSlides] = useState<number>();
 
-  useEffect(() => {
 
-    Keyboard.addListener("keyboardDidShow",
-      () => { setHeaderVisible(false) }
-    );
-
-    Keyboard.addListener("keyboardDidHide",
-      () => { setHeaderVisible(true) }
-    );
-
-    // setTotalSlides( React.Children.toArray(swipRef.current.props.children).length );
-  }, []);
 
   const handleNavigateToLogin = () => {
     navigation.popToTop();
@@ -87,14 +75,8 @@ const Register = () => {
   }
 
   const handleGoBack = () => {
-
-    if (swiperIndex === 1) {
-      navigation.popToTop();
-      navigation.navigate('Login');
-    } else {
-      // swipRef.current.scrollBy(-1);
-      // setSwiperIndex(swiperIndex - 1)
-    }
+    navigation.popToTop();
+    navigation.navigate('Login');
   }
 
   const handleSwiperNav = ( {validate}: HandleSwiperNavProps = {}) =>{
@@ -165,17 +147,6 @@ const Register = () => {
 
     }
   }
-
-  // const SwiperHeader = () => (
-  //     <View style={[styles.headerItem, !headerVisible && { opacity: 0 }]}>
-  //         <Text style={styles.title}>
-  //             Crie sua {'\n'}conta gratuíta
-  //         </Text>
-  //         <Text style={styles.description}>
-  //             Basta preencher esses dados {'\n'}e você estará conosco.
-  //         </Text>
-  //     </View>
-  // )
 
   if (register) return (
     <ConfirmScreen
@@ -256,6 +227,7 @@ const Register = () => {
                   label="Telefone"
                   focus={phoneFocus}
                   value={phone}
+                  keyboardType="numeric"
                   onFocus={() => setPhoneFocus(true)}
                   onBlur={() => setPhoneFocus(false)}
                   mask="phone"
@@ -291,6 +263,7 @@ const Register = () => {
                   onFocus={() => setEmailFocus(true)}
                   onBlur={() => setEmailFocus(false)}
                   autoCapitalize="none"
+                  keyboardType="email-address"
                 />
                 <TextField
                   style={styles.inputBRadiusBottom}
