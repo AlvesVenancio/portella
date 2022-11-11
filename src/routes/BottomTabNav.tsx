@@ -19,6 +19,7 @@ import contatosIcon from '../assets/images/icons/contatos.png';
 import navBg from '../assets/images/navigation-tab-background.png';
 import Categories from '../pages/Categories';
 import SubCategories from '../pages/Categories/SubCategories';
+import Contact from '../pages/Contact';
 
 const Stack = createStackNavigator();
 
@@ -59,7 +60,7 @@ const ProductStack = () => {
     );
   }
 
-const StudyTabs = () => {
+const BottomTabNav = () => {
     return (
         <Navigator
 
@@ -158,7 +159,7 @@ const StudyTabs = () => {
             />
             <Screen
                 name="Contatos"
-                component={Slides}
+                component={Contact}
                 options={{
                     tabBarLabel: 'Contatos',
                     tabBarLabelStyle: styles.tabStyle,
@@ -176,4 +177,4 @@ const StudyTabs = () => {
     )
 }
 
-export default StudyTabs;
+export default BottomTabNav;
