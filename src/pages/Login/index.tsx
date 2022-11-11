@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Image, Text, ScrollView, TouchableWithoutFeedback, KeyboardAvoidingView, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -28,8 +28,7 @@ const Login = () => {
 
     const { signIn } = useContext(AuthContext);
 
-    useEffect(() => {
-    }, []);
+
 
     const handleNavigateToRegister = () => {
         navigation.navigate('Register');
@@ -95,11 +94,11 @@ const Login = () => {
                         />
                     </View>
                     <View style={styles.rememberAndPassBlock}>
-                        <CheckBoxStyled
+                        {/* <CheckBoxStyled
                             check={rememberMe}
                             text="Lembrar-me"
                             onPress={() => setRememberMe(!rememberMe)}
-                        />
+                        /> */}
                         <TouchableWithoutFeedback
                             onPress={handleNavigateToForgotPass}
                         >
