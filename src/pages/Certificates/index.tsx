@@ -1,5 +1,5 @@
 import React, {  useRef, useState } from 'react';
-import { View, Text, FlatList, ListRenderItem } from 'react-native';
+import { View, Text, FlatList, ListRenderItem, TextInput } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import * as FileSystem from 'expo-file-system';
@@ -12,6 +12,7 @@ import TextField from '../../components/TextField';
 import api from '../../services/api';
 
 import PdfViewer from '../../components/PdfViewer';
+import FocusButton from '../../components/FocusButton';
 
         
 
@@ -234,7 +235,7 @@ const Certificates = () => {
                 <View
                     style={styles.containt}
                 >
-                    <TextField
+                    {/* <TextField
                         style={styles.inputSearch}
                         label="Buscar..."
                         focus={searchFocus}
@@ -243,11 +244,33 @@ const Certificates = () => {
                         onChangeText={text => setSearch(text)}
                         onFocus={() => setSearchFocus(true)}
                         onBlur={() => setSearchFocus(false)}
-                        search={true}
+                        search={false}
                         onSubmitEditing={ () => { handleGetCertificates() }}
                         autoCapitalize='characters'
 
+                    /> */}
+
+                    <TextInput 
+                        style={[styles.inputSearch, search ? {} : styles.inputPlaceholder]}
+                        placeholder='Digite o número do PV...'
+                        blurOnSubmit={true}
+                        value={search}
+                        onChangeText={text => setSearch(text)}
+                        onFocus={() => setSearchFocus(true)}
+                        onBlur={() => setSearchFocus(false)}
+                        onSubmitEditing={ () => { handleGetCertificates() }}
+                        autoCapitalize='characters'
                     />
+
+                    <FocusButton
+                        style={{marginBottom: 20}}
+                        text="Localizar Certificado"
+                        bgColor='#FFF'
+                        textColor='#004254'
+                        onPress={() => handleGetCertificates() }
+                    />
+
+                    
                     { search && hasSearch &&
                     <Text style={styles.resultText}>
                         { certificates.length ? 'Resultados' : 'Nenhum resultado' }

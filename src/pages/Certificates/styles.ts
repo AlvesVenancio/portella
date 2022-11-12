@@ -26,9 +26,22 @@ const styles = StyleSheet.create({
     },
 
     inputSearch: {
-        borderRadius: 12,
-        marginBottom: 30,
-        paddingTop: 15,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#E6E6F0',
+        backgroundColor: '#f1f3f2',
+        color: '#6A6180',
+        fontSize: 20,
+        fontFamily: 'Roboto_400Regular',
+        textAlign: 'center',
+        padding: 15,   
+        marginBottom: 20,
+        letterSpacing: 5
+    },
+
+    inputPlaceholder:{
+        fontSize: 20,
+        letterSpacing: 1
     },
 
     flatList: {
