@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "portella",
-    "slug": "portella",
+    "name": "Portella Cabos",
+    "slug": "portella-cabos",
+    "description": "Com 80 anos de atuação consolidada no mercado nacional, e em contínuo processo de desenvolvimento comercial e técnico, firmamos parcerias com os maiores fabricantes e distribuidores nacionais e internacionais nos tornando, assim, o principal fornecedor para pequenas, médias e grandes operações requeridas pelo mercado.",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,16 +19,18 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.portellacabos.portellacabos",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.portellacabos.portellacabos",
+      "versionCode": 1,
+      "permissions": [],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
       }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     }
   }
 }
