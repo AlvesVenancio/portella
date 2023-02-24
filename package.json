@@ -1,6 +1,6 @@
 {
   "name": "portella",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -19,7 +19,7 @@
     "@react-navigation/stack": "^6.2.3",
     "@types/qs": "^6.9.7",
     "axios": "^0.27.2",
-    "deprecated-react-native-prop-types": "^2.3.0",
+    "deprecated-react-native-prop-types": "^4.0.0",
     "expo": "~46.0.9",
     "expo-analytics": "^1.0.18",
     "expo-application": "~4.2.2",
@@ -30,6 +30,8 @@
     "expo-splash-screen": "~0.16.2",
     "expo-status-bar": "~1.4.0",
     "expo-updates": "~0.14.7",
+    "patch-package": "^6.5.1",
+    "postinstall-postinstall": "^2.1.0",
     "qs": "^6.11.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",

@@ -10,7 +10,13 @@
     "preview": {
       "distribution": "internal"
     },
-    "production": {}
+    "production": {
+      "env": {
+        "WP_CUSTOMER_KEY": "ck_72482e993bafc7bf3dea951a8668bbe9f6a2ba1e",
+        "WP_CUSTOMER_SECRET": "cs_ea22298e4cbeb56c714d6952361057342e1fc7d0",
+        "WP_BASE_URL": "https://www.portellacabos.com.br/wp-json/wc/v3/"
+      }
+    }
   },
   "submit": {
     "production": {}
