@@ -93,6 +93,7 @@ api.interceptors.response.use(response => {
             });
 
         } else {
+console.log(['test',error.response]);
             return Promise.reject(new AuthTokenError())
         }
     }

@@ -3,7 +3,7 @@
     "name": "Portella Cabos",
     "slug": "portella-cabos",
     "description": "Com 80 anos de atuação consolidada no mercado nacional, e em contínuo processo de desenvolvimento comercial e técnico, firmamos parcerias com os maiores fabricantes e distribuidores nacionais e internacionais nos tornando, assim, o principal fornecedor para pequenas, médias e grandes operações requeridas pelo mercado.",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -20,12 +20,12 @@
     ],
     "ios": {
       "bundleIdentifier": "com.portellacabos.portellacabos",
-      "buildNumber": "1.0.4",
+      "buildNumber": "1.0.5",
       "supportsTablet": true
     },
     "android": {
       "package": "com.portellacabos.portellacabos",
-      "versionCode": 4,
+      "versionCode": 5,
       "permissions": [],
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",

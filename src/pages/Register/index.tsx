@@ -100,6 +100,7 @@ const Register = () => {
       }
 
       if(  formErrors.length ){
+        console.log(formErrors);
           Alert.alert( formErrors[0] );
           return;
       }
@@ -142,7 +143,7 @@ const Register = () => {
 
       } else {
         console.log(error?.response);
-        Alert.alert('Algo errado!\nNão foi possível concluir o cadastro.\nTente novametne mais tarde.');
+        Alert.alert('Algo errado!\nNão foi possível concluir o cadastro.\nTente novamente mais tarde.');
       }
 
     }
