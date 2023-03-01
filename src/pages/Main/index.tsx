@@ -33,11 +33,11 @@ const Login = () => {
                 <View style={styles.buttonsContainer}>
                     <RectButton style={styles.button} onPress={handleNavigateToLogin}>
                         <View style={styles.buttonBorder}>
-                            <Text style={styles.buttonText}>Login.</Text> 
+                            <Text style={styles.buttonText}>Login</Text> 
                         </View>
                     </RectButton>
                     <RectButton style={styles.buttonRegister} onPress={handleNavigateToRegister}>
-                        <Text style={styles.buttonTextRegister}>Cadastre-se.</Text>
+                        <Text style={styles.buttonTextRegister}>Cadastre-se</Text>
                     </RectButton>
                 </View>
             </ImageBackground>
