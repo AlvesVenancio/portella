@@ -170,7 +170,7 @@ const Register = () => {
         </BorderlessButton>
       </View>
       {/* <View style={{ flex: 1, paddingTop: 20 }}> */}
-        <KeyboardAvoidingView
+        < KeyboardAvoidingView
           behavior={Platform.OS == "ios" ? "padding" : "height"}
           style={styles.container}
         >
