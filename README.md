@@ -27,3 +27,8 @@ retire a exportação da chave desejado no arquivo src/types/index.d.ts na decla
     export const NOME_DA_CHAVE: string;
   }
 ```
+
+
+eas update integrado, para deploy usar:
+
+     eas update --branch production --message "comentario aqui"

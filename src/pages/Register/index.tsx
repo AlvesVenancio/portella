@@ -179,7 +179,7 @@ const Register = () => {
               <View>
                 <View style={styles.headerItem}>
                   <Text style={styles.title}>
-                    Crie sua {'\n'}conta gratuita
+                    Crie sua {'\n'}conta gratuita.
                   </Text>
                   <Text style={styles.description}>
                     Basta preencher esses dados {'\n'}e você estará conosco.
