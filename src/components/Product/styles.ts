@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         zIndex: 999,
+        resizeMode: 'contain',
         position: 'absolute',
         top: -10,
     },
