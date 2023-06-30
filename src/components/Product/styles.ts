@@ -22,25 +22,26 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         zIndex: 999,
-        resizeMode: 'contain',
         position: 'absolute',
-        top: -10,
+        top: 4,
     },
 
     productBg: {
         borderRadius: 15,
         backgroundColor: '#FFFFFF',
         width: '100%',
-        height: 80,
+        height: 100,
         justifyContent:'flex-end',
         alignItems: 'center',
         paddingBottom: 10,
         elevation: 15,
+        zIndex:10
     },
 
     productText: {
         color: '#004354',
         textTransform: 'uppercase',
+        textAlign: 'center',
         fontSize: 10,
         fontFamily: 'Montserrat_700Bold',
         paddingHorizontal: 5,

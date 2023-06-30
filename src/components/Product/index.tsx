@@ -24,7 +24,13 @@ function ProductComponent ({title, imageURL, link, column}:  ProductProps): JSX.
             <BorderlessButton style={styles.productLink} onPress={link}/>
             <View style={[styles.productBg, column && styles.productBgColumn]}>
                 {imageURL && (
-                    <Image style={[styles.productImage, column && styles.productImageColumn]} source={{uri: imageURL}} />
+                    <Image style={[
+                        styles.productImage, 
+                        column && styles.productImageColumn,
+                        {resizeMode: 'contain'}
+                        ]} 
+                        source={{uri: imageURL}} 
+                    />
                 )}
                 {! imageURL && (
                     <FontAwesome 
