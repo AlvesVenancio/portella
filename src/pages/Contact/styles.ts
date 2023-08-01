@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: 'Oswald_700Bold',
         fontSize: 30,
-        marginBottom: 20
+        marginBottom: 2
     },
     
     text: {
@@ -42,7 +42,20 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 10,
         marginBottom: 10,
     },
-    
+    ctnAccRemove:{
+        marginTop: 30,
+        // backgroundColor: '#fff',
+        padding: 4,
+        // marginBottom: 10,
+        // borderWidth: 1,
+        // borderColor: '#ddd',
+        borderRadius: 3
+    },
+    rmAccTitle:{
+        fontWeight: '500',
+        color: '#006adc',
+        fontStyle: 'italic'
+    },
 
 })
 

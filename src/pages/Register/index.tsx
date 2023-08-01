@@ -16,7 +16,12 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { StackParamList } from '../../routes/AppRoutes';
 
 import api from '../../services/api';
-import { isValidCPF, isValidDate, isValidEmail, isValidPhone } from '../../utils/validators';
+import { 
+  // isValidCPF, 
+  // isValidDate, 
+  isValidEmail, 
+  // isValidPhone 
+} from '../../utils/validators';
 
 import qs from 'qs';
 
@@ -45,27 +50,27 @@ const Register = () => {
   const [lastName, setLastName] = useState<string>();
   const [lastNameFocus, setLastNameFocus] = useState<boolean>(false);
 
-  const [company, setCompany] = useState<string>();
-  const [companyFocus, setCompanyFocus] = useState<boolean>(false);
-  const [positionTitle, setPositionTitle] = useState<string>();
-  const [positionTitleFocus, setPositionTitleFocus] = useState<boolean>(false);
+  // const [company, setCompany] = useState<string>();
+  // const [companyFocus, setCompanyFocus] = useState<boolean>(false);
+  // const [positionTitle, setPositionTitle] = useState<string>();
+  // const [positionTitleFocus, setPositionTitleFocus] = useState<boolean>(false);
 
   const [email, setEmail] = useState<string>();
   const [emailFocus, setEmailFocus] = useState<boolean>(false);
   const [password, setPassword] = useState<string>();
   const [passwordFocus, setPasswordFocus] = useState<boolean>(false);
 
-  const [cpf, setCpf] = useState<string>();
-  const [cpfFocus, setCpfFocus] = useState<boolean>(false);
-  const [birthDate, setBirthDate] = useState<string>();
-  const [birthDateFocus, setBirthDateFocus] = useState<boolean>(false);
-  const [phone, setPhone] = useState<string>();
-  const [phoneFocus, setPhoneFocus] = useState<boolean>(false);
+  // const [cpf, setCpf] = useState<string>();
+  // const [cpfFocus, setCpfFocus] = useState<boolean>(false);
+  // const [birthDate, setBirthDate] = useState<string>();
+  // const [birthDateFocus, setBirthDateFocus] = useState<boolean>(false);
+  // const [phone, setPhone] = useState<string>();
+  // const [phoneFocus, setPhoneFocus] = useState<boolean>(false);
 
   const [register, setRegister] = useState<boolean>(false);
   const [awaitRegister, setAwaitRegister] = useState<boolean>(false);
 
-  const [totalSlides, setTotalSlides] = useState<number>();
+  // const [totalSlides, setTotalSlides] = useState<number>();
 
 
 
@@ -119,11 +124,11 @@ const Register = () => {
       full_name: `${name} ${lastName}`,
       email,
       password,
-      phone,
-      birth_date: birthDate,
-      doc_cpf: cpf,
-      company,
-      position_title: positionTitle
+      // phone,
+      // birth_date: birthDate,
+      // doc_cpf: cpf,
+      // company,
+      // position_title: positionTitle
     }
 
     try {
@@ -205,7 +210,7 @@ const Register = () => {
 
               </View>
 
-              <View>
+              {/* <View>
                 <TextField
                   label="CPF"
                   focus={cpfFocus}
@@ -234,9 +239,9 @@ const Register = () => {
                   mask="phone"
                   inputMaskChange={(text: string) => setPhone(text)}
                 />
-              </View>
+              </View> */}
 
-              <View>
+              {/* <View>
                 <TextField
                   label="Empresa"
                   focus={companyFocus}
@@ -253,7 +258,7 @@ const Register = () => {
                   onFocus={() => setPositionTitleFocus(true)}
                   onBlur={() => setPositionTitleFocus(false)}
                 />
-              </View>
+              </View> */}
 
               <View>
                 <TextField
@@ -286,9 +291,9 @@ const Register = () => {
                 isLoading={awaitRegister}
                 onPress={() => handleSwiperNav({
                     validate: [
-                      {validator: isValidCPF, label: 'Cpf', value: cpf},
-                      {validator: isValidDate,label: 'Data de nascimetno', value: birthDate},
-                      {validator: isValidPhone,label: 'Telefone', value: phone},
+                      // {validator: isValidCPF, label: 'Cpf', value: cpf},
+                      // {validator: isValidDate,label: 'Data de nascimetno', value: birthDate},
+                      // {validator: isValidPhone,label: 'Telefone', value: phone},
                       {validator: isValidEmail, label: 'email', value: email},
                       {validator: isValidPass,label: 'Senha', value: password}
                     ]

@@ -1,5 +1,6 @@
-import React, { useState, } from 'react';
-import { View, Text, ScrollView, KeyboardAvoidingView, Platform, Alert} from 'react-native';
+import React, { useState, useContext} from 'react';
+import { View, Text, ScrollView, KeyboardAvoidingView, Platform, Alert, Linking, TouchableOpacity} from 'react-native';
+
 
 import FocusButton from '../../components/FocusButton';
 
@@ -13,6 +14,7 @@ import { isValidEmail, isValidPhone } from '../../utils/validators';
 
 
 import styles from './styles';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Contact = () => {
 
@@ -30,6 +32,7 @@ const Contact = () => {
 
     const [ formSending, setFormSending ] = useState<boolean>(false);
 
+    const { signOut } = useContext(AuthContext);
 
     const handleSendContact = async () => {
       
@@ -87,6 +90,24 @@ const Contact = () => {
       setPhoneFocus(false);
       setMessage('');
       setMessageFocus(false);
+    }
+
+    const handleRmAccount = () => {
+      signOut();
+      Linking.openURL('https://www.portellacabos.com.br/excluir-conta/');
+    }
+
+    const requestAccountRemove = () => {
+      Alert.alert(
+        'Remover Conta',
+        `Gostaria realmente de remover sua conta? 
+        Você será deslogado no app e redirecionado para nosso site na a página de confirmação.`,
+        [
+          { text: 'Confirmar', onPress: () => handleRmAccount() },
+          { text: 'Cancelar', onPress: () => console.log('cancelado') },
+        ],
+        { cancelable: true }
+      );
     }
 
     return (
@@ -168,6 +189,19 @@ const Contact = () => {
                         onPress={handleSendContact}
                         isLoading={formSending}
                       />
+                  </View>
+
+                  <View
+                    style={styles.ctnAccRemove}
+                  >
+                    <Text style={{fontWeight: 'bold'}}>
+                       Meus dados:
+                    </Text>
+                    <TouchableOpacity onPress={requestAccountRemove} activeOpacity={.7} >
+                      <Text style={styles.rmAccTitle}>
+                        Solicitar remoção de conta.
+                      </Text>
+                    </TouchableOpacity>
                   </View>
               </ScrollView>
             </KeyboardAvoidingView>
